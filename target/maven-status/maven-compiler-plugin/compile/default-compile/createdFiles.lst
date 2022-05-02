@@ -1,0 +1,9 @@
+models\procedures\validateForms.class
+controllers\productsController.class
+models\objects\Order.class
+models\queries\usersQueries.class
+models\objects\User.class
+config\DBConnect.class
+controllers\usersController.class
+models\objects\Products.class
+models\queries\productsQueries.class
