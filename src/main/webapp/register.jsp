@@ -43,6 +43,6 @@
             </div>
             </div>
   </section>
-  <script src = "public/js/register.js"></script>
+  <script src = "public/dist/register.js"></script>
 </body>
 </html>

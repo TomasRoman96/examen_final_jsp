@@ -64,7 +64,7 @@ if (session != null) {
         </div>
     </section>
 
-    <script src = "public/js/dashboard.js"></script>
+    <script src = "public/dist/dashboard.js"></script>
 
 </body>
 </html>

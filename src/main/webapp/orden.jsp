@@ -63,7 +63,7 @@ if (session != null) {
         </div>
     </section>
 
-    <script src = "public/js/order.js"></script>
+    <script src = "public/dist/orders.js"></script>
 
 </body>
 </html>

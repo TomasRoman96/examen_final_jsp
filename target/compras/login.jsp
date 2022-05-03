@@ -47,6 +47,6 @@ if (session != null) {
             </div>
             </div>
   </section>
-  <script src = "public/js/login.js"></script>
+  <script src = "public/dist/login.js"></script>
 </body>
 </html>

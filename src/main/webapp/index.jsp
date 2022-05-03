@@ -43,7 +43,7 @@
         </div>
     </div>
 
-    <script src = "public/js/shop.js"></script>
+    <script src = "public/dist/shop.js"></script>
 
 </body>
 </html>
