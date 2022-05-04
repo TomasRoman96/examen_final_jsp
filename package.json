@@ -1,0 +1,22 @@
+{
+  "name": "examen_final_jsp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TomasRoman96/examen_final_jsp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TomasRoman96/examen_final_jsp/issues"
+  },
+  "homepage": "https://github.com/TomasRoman96/examen_final_jsp#readme",
+  "devDependencies": {
+    "@types/jquery": "^3.5.14"
+  }
+}

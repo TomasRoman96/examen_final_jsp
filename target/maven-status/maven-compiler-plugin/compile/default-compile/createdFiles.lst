@@ -7,3 +7,4 @@ config\DBConnect.class
 controllers\usersController.class
 models\objects\Products.class
 models\queries\productsQueries.class
+models\procedures\shop.class

@@ -28,6 +28,8 @@ public class validateForms {
             response = "OK";
             HttpSession session = req.getSession(true);
             session.setAttribute("User", U.getUserName());
+            ArrayList<String> productList = new ArrayList<String>();
+            session.setAttribute("shop", productList);
             session.setMaxInactiveInterval(500);
         }
     

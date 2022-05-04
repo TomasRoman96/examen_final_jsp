@@ -1,6 +1,6 @@
 (() => {
     class Order {
-        private orderId: HTMLInputElement;
+        private orderId: HTMLInputElement | any;
         private dataTableCustomize = {
             language: {
                 paginate: {
@@ -24,7 +24,7 @@
             },
         };
         constructor() {
-            this.orderId = $("#w-orderid").attr("data-id");
+            this.orderId = document.getElementById("w-orderid")?.getAttribute("data-id");
             this.getOrderInfo();
             this.DOMEvents();
         }
@@ -32,7 +32,7 @@
         public getOrderInfo(): void {
             this.ajaxCall("productsController", {
                 action: "getOrderInfo",
-                orderId: this.orderId.value
+                orderId: this.orderId
             });
         };
 
@@ -52,7 +52,7 @@
         };
 
         public responseGetOrderInfo(resp: any): void {
-            dataTableBuilder(
+            this.dataTableBuilder(
                 resp,
                 "#order_info",
                 this.dataTableCustomize.language,
@@ -83,4 +83,5 @@
         DOMEvents(): void {
         }
     }
+    const O = new Order();
 })();

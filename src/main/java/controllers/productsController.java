@@ -10,11 +10,13 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import models.queries.*;
 import models.objects.*;
+import models.procedures.shop;
 
 @WebServlet(name = "productsController", urlPatterns = {"/productsController"})
 
 public class productsController extends HttpServlet{
     productsQueries PQ = new productsQueries();
+    shop S = new shop();
 
     public ArrayList<Products> getProductsFromDB(){
         ArrayList<Products> AR = PQ.getProductsFromBD();
@@ -29,6 +31,11 @@ public class productsController extends HttpServlet{
     public ArrayList<Order> getOrderInfo(String ID){
         ArrayList<Order> AO = PQ.getOrderInfo(ID);
         return AO;
+    }
+
+    public String addToCart(String ID,HttpServletRequest req){
+        String message = S.addToCart(req,ID);
+        return message;
     }
 
     @Override
@@ -55,6 +62,10 @@ public class productsController extends HttpServlet{
             resp.setCharacterEncoding("UTF-8");
             out.print(new Gson().toJson(ArrayOrderInfo));
             out.flush();
+            break;
+            case "addToCart":
+            String message = addToCart(req.getParameter("id").toString(),req);
+            out.print(message);
             break;
         }
         

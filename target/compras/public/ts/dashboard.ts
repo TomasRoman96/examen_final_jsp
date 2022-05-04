@@ -1,6 +1,6 @@
 (() => {
     class Dashboard {
-        userName: HTMLInputElement;
+        userName: HTMLInputElement | any;
         dataTableCustomize = {
             language: {
                 paginate: {
@@ -24,15 +24,16 @@
             },
         };
         constructor() {
-            this.userName = $("#w-username").attr("data-id");
+            this.userName = document.getElementById("w-username")?.getAttribute("data-id");
             this.getOrders();
             this.DOMEvents();
         }
 
         public getOrders(): void {
+            console.log(this.userName);
             this.ajaxCall("productsController", {
                 action: "getOrders",
-                username: this.userName.value
+                username: this.userName
             });
         };
 

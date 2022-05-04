@@ -25,7 +25,7 @@ if (session != null) {
 <body>
   <section id = "login-form">
     <br>
-    <h1 class="display-1 text-center">Bienvenido a Web Shop</h1>
+    <h1 class="display-1 text-center">Bienvenido a Tienda de Zapatillas</h1>
     <br>
       <div class = "container d-flex justify-content-center">
         <div class="form-container"

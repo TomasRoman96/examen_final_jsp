@@ -2,6 +2,7 @@
 (() => {
     class Dashboard {
         constructor() {
+            var _a;
             this.dataTableCustomize = {
                 language: {
                     paginate: {
@@ -24,14 +25,15 @@
                     zeroRecords: "Sin resultados encontrados",
                 },
             };
-            this.userName = $("#w-username").attr("data-id");
+            this.userName = (_a = document.getElementById("w-username")) === null || _a === void 0 ? void 0 : _a.getAttribute("data-id");
             this.getOrders();
             this.DOMEvents();
         }
         getOrders() {
+            console.log(this.userName);
             this.ajaxCall("productsController", {
                 action: "getOrders",
-                username: this.userName.value
+                username: this.userName
             });
         }
         ;

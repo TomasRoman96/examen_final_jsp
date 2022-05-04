@@ -2,6 +2,7 @@
 (() => {
     class Order {
         constructor() {
+            var _a;
             this.dataTableCustomize = {
                 language: {
                     paginate: {
@@ -24,14 +25,14 @@
                     zeroRecords: "Sin resultados encontrados",
                 },
             };
-            this.orderId = $("#w-orderid").attr("data-id");
+            this.orderId = (_a = document.getElementById("w-orderid")) === null || _a === void 0 ? void 0 : _a.getAttribute("data-id");
             this.getOrderInfo();
             this.DOMEvents();
         }
         getOrderInfo() {
             this.ajaxCall("productsController", {
                 action: "getOrderInfo",
-                orderId: this.orderId.value
+                orderId: this.orderId
             });
         }
         ;
@@ -51,7 +52,7 @@
         }
         ;
         responseGetOrderInfo(resp) {
-            dataTableBuilder(resp, "#order_info", this.dataTableCustomize.language, [
+            this.dataTableBuilder(resp, "#order_info", this.dataTableCustomize.language, [
                 {
                     data: "Name",
                 },
@@ -77,4 +78,5 @@
         DOMEvents() {
         }
     }
+    const O = new Order();
 })();
