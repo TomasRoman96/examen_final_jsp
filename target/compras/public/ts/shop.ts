@@ -2,16 +2,19 @@
     class Shop {
 
         private productsDiv: HTMLInputElement;
-        private cartButton: HTMLInputElement | any;
+        private cartButton: HTMLInputElement;
         private userName: HTMLInputElement | any;
         private arrayProductsShop: number[];
-        private arrayProducts: {};
+        private arrayProducts: any[];
+        private shoppingCartDiv: HTMLInputElement;
 
         constructor() {
             this.productsDiv = <HTMLInputElement>document.getElementById("products_list");
             this.userName = document.getElementById("up")?.getAttribute("data-u");
+            this.cartButton = <HTMLInputElement>document.getElementById("button-cart")
+            this.shoppingCartDiv = <HTMLInputElement>document.getElementById("shop-cart-div");
             this.arrayProductsShop = [];
-            this.arrayProducts = {};
+            this.arrayProducts = [];
             this.getAllProducts();
         }
 
@@ -58,6 +61,22 @@
             console.log(resp);
         }
 
+        public viewCart():void{
+            let htmlstring = "";
+            this.arrayProductsShop.forEach((p:any)=>{
+                this.arrayProducts.forEach((a:any)=>{
+                    if(parseInt(p) === a.ID){
+                    htmlstring += `<p>Producto: ${a.Name}<span>- Precio: ${a.Price}</span></p>`;
+                    }
+                })
+            })
+
+            this.shoppingCartDiv.innerHTML = htmlstring;
+            $("#shop-modal").modal("toggle");
+            $("#shop-modal").modal("show");
+
+        }
+
         DOMEvents(): void {
             let Shop = this;
             $(".btn-buy").on("click",function(){
@@ -71,7 +90,12 @@
             }
             else{
                 Shop.ajaxCall("productsController",{action:"addToCart",id: id});
+                alertify.success("Se ha ingresado el producto a su carrito de compras");
             }});
+            try{
+                this.cartButton.addEventListener("click",()=> {this.viewCart()})
+            }
+            catch(e){}
         }
     }
     const S = new Shop();
