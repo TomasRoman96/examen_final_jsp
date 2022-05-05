@@ -17,7 +17,7 @@
 </head>
 <body>
     <section id = "navbar">
-      <h1><%out.print(session.getAttribute("shop"));%></h1>
+      <!--<h1><%out.print(session.getAttribute("shop"));%></h1>-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
               <a class="navbar-brand" href="/">Tienda de Zapatillas</a>

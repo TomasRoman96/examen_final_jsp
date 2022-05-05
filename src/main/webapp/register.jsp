@@ -18,7 +18,7 @@
 <body>
   <section id = "register-form">
     <br>
-    <h1 class="display-1 text-center">Registrar Cuenta en Web Shop</h1>
+    <h1 class="display-1 text-center">Registrar Cuenta en Tienda de Zapatillas</h1>
     <br>
       <div class = "container d-flex justify-content-center">
         <div class="form-container"
